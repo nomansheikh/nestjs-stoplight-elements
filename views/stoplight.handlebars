@@ -1,0 +1,34 @@
+<html lang='en'>
+  <head>
+    <meta charset='utf-8' />
+    <meta
+      name='viewport'
+      content='width=device-width, initial-scale=1, shrink-to-fit=no'
+    />
+    <title>{{data.title}}</title>
+
+    <script
+      src='https://unpkg.com/@stoplight/elements/web-components.min.js'
+    ></script>
+    <link
+      rel='stylesheet'
+      href='https://unpkg.com/@stoplight/elements/styles.min.css'
+    />
+  </head>
+  <body>
+
+    <elements-api
+      apiDescriptionDocument='{{data.document}}'
+      {{#if data.router}}router='{{data.router}}'{{/if}}
+      {{#if data.layout}}layout='{{data.layout}}'{{/if}}
+      {{#if data.basePath}}basePath='{{data.basePath}}'{{/if}}
+      {{#if data.hideInternal}}hideInternal='{{data.hideInternal}}'{{/if}}
+      {{#if data.hideTryIt}}hideTryIt='{{data.hideTryIt}}'{{/if}}
+      {{#if data.tryItCorsProxy}}tryItCorsProxy='{{data.tryItCorsProxy}}'{{/if}}
+      {{#if data.logo}}logo='{{data.logo}}'{{/if}}
+      {{#if data.hideSchemas}}hideSchemas="'{{data.hideSchemas}}"{{/if}}
+      {{#if data.hideExport}}hideExport="'{{data.hideExport}}"{{/if}}
+    ></elements-api>
+
+  </body>
+</html>
