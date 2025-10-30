@@ -34,7 +34,7 @@ export class StoplightElementsModule {
   constructor(
     private app: Omit<INestApplication, 'enableVersioning'>,
     private document: OpenAPIObject,
-    private options: StoplightElementsOptions = {}
+    private options: StoplightElementsOptions = {},
   ) {}
 
   /**
@@ -70,7 +70,7 @@ export class StoplightElementsModule {
       '..',
       '..',
       'views',
-      'stoplight.handlebars'
+      'stoplight.handlebars',
     );
     // console.log(stoplightFilePath);
     // // get handlebars rendered HTML
@@ -80,7 +80,7 @@ export class StoplightElementsModule {
       const sendPage = () => {
         res.setHeader(
           'Content-Security-Policy',
-          "default-src * 'unsafe-inline' 'unsafe-eval'; script-src * 'unsafe-inline' 'unsafe-eval'; child-src * 'unsafe-inline' 'unsafe-eval' blob:; worker-src * 'unsafe-inline' 'unsafe-eval' blob:; connect-src * 'unsafe-inline'; img-src * data: blob: 'unsafe-inline'; frame-src *; style-src * 'unsafe-inline';"
+          "default-src * 'unsafe-inline' 'unsafe-eval'; script-src * 'unsafe-inline' 'unsafe-eval'; child-src * 'unsafe-inline' 'unsafe-eval' blob:; worker-src * 'unsafe-inline' 'unsafe-eval' blob:; connect-src * 'unsafe-inline'; img-src * data: blob: 'unsafe-inline'; frame-src *; style-src * 'unsafe-inline';",
         );
         res.send(stoplightHTML);
       };

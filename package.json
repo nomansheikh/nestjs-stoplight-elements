@@ -23,7 +23,7 @@
     "url": "https://github.com/nomansheikh/nestjs-stoplight-elements.git"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "yarn lint",
     "lint": "gts lint",
     "clean": "gts clean",
     "compile": "tsc",
@@ -52,6 +52,8 @@
   },
   "dependencies": {
     "@nestjs/platform-express": "^11.1.8",
-    "express-handlebars": "^8.0.3"
+    "eslint-plugin-prettier": "^5.5.4",
+    "express-handlebars": "^8.0.3",
+    "install": "^0.13.0"
   }
 }
