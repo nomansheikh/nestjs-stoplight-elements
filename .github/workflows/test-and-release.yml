@@ -5,8 +5,8 @@ env:
   MAIN_REF: refs/heads/main
 
 on:
-  push:
-    branches: ["**"]
+  release:
+    types: [published]
 
 permissions:
   contents: write
