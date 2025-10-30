@@ -3,8 +3,6 @@
 [Stoplight Elements](https://stoplight.io/open-source/elements) Interactive API Docs for your NestJS app.
 Inspired by [NestJS-Redoc](https://github.com/mxarc/nestjs-redoc)
 
-![Stoplight Elements](https://stoplight.io/_next/image?url=%2Fimages%2Felements%2Felements-landing-hero.png&w=3840&q=75)
-
 It's almost a drop in replacement for you current swagger UI, you only need to import this package and modify any settings you may want to change
 
 ## Installation
