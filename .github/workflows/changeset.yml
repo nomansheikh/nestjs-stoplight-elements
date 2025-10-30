@@ -1,12 +1,12 @@
-name: Test and Release
+name: Changesets
 
 env:
   # Sync with .changeset/config.json:baseBranch
   MAIN_REF: refs/heads/main
 
 on:
-  release:
-    types: [published]
+  push:
+    branches: [main]
 
 permissions:
   contents: write
@@ -15,8 +15,8 @@ permissions:
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
 jobs:
-  test-and-release:
-    name: Test and Release
+  version:
+    name: Create Version PR
     runs-on: ubuntu-latest
 
     steps:
@@ -42,7 +42,6 @@ jobs:
         run: yarn test
 
       - name: Capture new release versions
-        if: ${{ github.ref == env.MAIN_REF }}
         run: |
           if yarn changeset status --output=release.json; then
             echo "RELEASE=Version $(jq -r '.releases[0].newVersion' release.json)" >> "$GITHUB_ENV"
@@ -51,13 +50,10 @@ jobs:
             rm release.json
           fi
 
-      - name: Create Release Pull Request or Publish to npm
-        if: ${{ github.ref == env.MAIN_REF }}
+      - name: Create Release Pull Request
         uses: changesets/action@v1
         with:
-          publish: yarn changeset publish
           title: ${{ env.RELEASE }}
           commit: ${{ env.RELEASE }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
