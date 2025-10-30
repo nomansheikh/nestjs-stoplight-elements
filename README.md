@@ -7,7 +7,7 @@ It's almost a drop in replacement for you current swagger UI, you only need to i
 
 ## Installation
 
-`npm i nestjs-stoplight-elements`
+`npm i @nomansheikh/nestjs-stoplight-elements`
 
 ## How to use
 
