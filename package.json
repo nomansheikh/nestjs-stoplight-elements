@@ -1,6 +1,9 @@
 {
   "name": "@nomansheikh/nestjs-stoplight-elements",
   "version": "0.0.1",
+  "publishConfig": {
+    "access": "public"
+  },
   "description": "A NestJS module to serve Stoplight Elements documentation using Express Handlebars.",
   "main": "build/src/index.js",
   "types": "build/src/index.d.ts",
