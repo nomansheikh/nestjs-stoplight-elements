@@ -1,6 +1,6 @@
 {
   "name": "@nomansheikh/nestjs-stoplight-elements",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "A NestJS module to serve Stoplight Elements documentation using Express Handlebars.",
   "main": "build/src/index.js",
   "types": "build/src/index.d.ts",
@@ -28,11 +28,12 @@
     "clean": "gts clean",
     "compile": "tsc",
     "fix": "gts fix",
-    "prepare": "yarn compile",
+    "build": "yarn compile",
     "pretest": "yarn compile",
     "posttest": "yarn lint"
   },
   "devDependencies": {
+    "@changesets/cli": "^2.29.7",
     "@nestjs/common": "^10.0.3",
     "@nestjs/core": "^10.0.3",
     "@nestjs/platform-express": "^10.0.3",
