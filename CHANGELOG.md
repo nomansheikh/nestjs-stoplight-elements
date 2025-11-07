@@ -1,5 +1,11 @@
 # @nomansheikh/nestjs-stoplight-elements
 
+## 1.2.0
+
+### Minor Changes
+
+- 3cce911: add missing tryItCredentialsPolicy to the handlebars config
+
 ## 1.1.0
 
 ### Minor Changes
