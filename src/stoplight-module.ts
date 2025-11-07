@@ -30,6 +30,7 @@ export class StoplightElementsModule {
    *
    * @param app - Nest Application
    * @param document - Swagger Document object
+   * @param options
    */
   constructor(
     private app: Omit<INestApplication, 'enableVersioning'>,

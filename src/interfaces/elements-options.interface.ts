@@ -11,6 +11,11 @@ export interface StoplightElementsOptions {
   hideExport?: boolean;
   /** Pass the URL of a CORS proxy used to send requests to TryIt.The provided url is prepended to the URL of an actual request. */
   tryItCorsProxy?: string;
+  /**
+   * Use to fetch the credential policy for the Try It feature. Options are: omit (default), include, and same-origin.
+   * @default omit
+   */
+  tryItCredentialsPolicy?: 'omit' | 'same-origin' | 'include';
   /** There are two layouts for Elements:
    * `sidebar` - (default) Three-column design.
    * `stacked` - Everything in a single column, making integrations with existing websites that have their own sidebar or other columns already.
