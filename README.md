@@ -47,6 +47,7 @@ From [Stoplight Elements Docs](https://meta.stoplight.io/docs/elements/ZG9jOjUxM
 - `hideInternal` - Pass "true" to filter out any content which has been marked as internal with x-internal.
 - `hideTryIt` - Pass true to hide the "Try It" panel (the interactive API console).
 - `tryItCorsProxy` - Pass the URL of a CORS proxy used to send requests to TryIt. The provided url is prepended to the URL of an actual request.
+- `tryItCredentialsPolicy` - Use to fetch the credential policy for the Try It feature. Options are: `omit` (default), `include`, and `same-origin`.
 - `layout` - There are two layouts for Elements:
   - `sidebar` - (default) Three-column design.
   - `stacked` - Everything in a single column, making integrations with existing websites that have their own sidebar or other columns already.
