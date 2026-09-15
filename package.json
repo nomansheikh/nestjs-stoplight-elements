@@ -23,7 +23,7 @@
   "author": "Noman Sheikh",
   "repository": {
     "type": "git",
-    "url": "https://github.com/nomansheikh/nestjs-stoplight-elements.git"
+    "url": "git+https://github.com/nomansheikh/nestjs-stoplight-elements.git"
   },
   "scripts": {
     "test": "yarn lint",

@@ -6,6 +6,8 @@ on:
 
 permissions:
   contents: read
+  # Required to mint the short-lived OIDC token npm exchanges for publish rights.
+  id-token: write
 
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
@@ -25,7 +27,12 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 24.5
+          registry-url: 'https://registry.npmjs.org'
           cache: yarn
+
+      # Staged publishing needs npm >= 11.15.0; node 24.5 ships 11.5.1.
+      - name: Update npm
+        run: npm install -g npm@latest
 
       - name: Install deps
         run: yarn install --frozen-lockfile
@@ -36,10 +43,7 @@ jobs:
       - name: Test packages
         run: yarn test
 
-      - name: Setup npm authentication
-        run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
-
-      - name: Publish to npm
-        run: yarn publish --access public --non-interactive
-        env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+      # The trusted publisher grants `npm stage publish` only. This submits the
+      # tarball to staging; a maintainer approves it with 2FA to make it public.
+      - name: Stage publish to npm
+        run: npm stage publish
